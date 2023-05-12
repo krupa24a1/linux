@@ -1,0 +1,31 @@
+Linux has a hierarchical file system. It is having a single root directory. All other folders will be tree like structure from root folder.
+
+In linux, everything is a file. Images, audios, videos, configurations, devices etc are all files.
+
+/ - represents root directory
+~ - represents home directory of current user
+
+/home - Contains home directories of all users of that system.
+/bin - Binaries. Contains executable binary format files that will be executed whenever we type in some corresponding command.
+/sbin - System Binaries. Contains executable binary format files that will be executed whenever we type in some command. We need sudo permission to execute them.
+/etc - Etcetera. Consists of all the system configuration files and other installed 3rd party software configurations.
+/lib - Libraries. Contains libraries which commands present in /bin and /sbin depend on or use.
+/media - Shows external devices that are connected to system.
+/mnt - Manually mounted external devices are shown here.
+/opt - Installed third party libraries will be present here.
+/root - Home directory of super user.
+/usr - Before /home was introduced, this folder is used to be the home directory of users.
+/boot - Booting. Contains all files needed to boot the system. 
+/tmp - All the temporary files that are created by cpu while performing tasks will be stored here.
+/dev - All the hardware devices are stored here as files.
+/var - Variables. Contains caches and logs.
+
+Note
+====
+1) bin, sbin, lib directories are present in /, /usr, /usr/local. Why?
+=> /bin, /sbin are similar to /usr/bin, /usr/sbin. In older days, we used to face some storage issues, so we started storing those binaries and system binaries in two places. But now we have sufficient storage, so same commands will be present in two places. Moreover, /usr/bin and /usr/sbin have more commands than /bin and /sbin.
+=> /usr/local/bin and /usr/local/sbin consists of third party softwares that are installed by user and are available to system wide users.
+
+2) What is the difference between third party libraries stored in /opt and /usr/local?
+=> Softwares that are splitted into binaries, system binaries and libraries will be stored in /usr/local.
+=> Softwares that are stored as a single file and wont't be splitted will be stored in /opt.

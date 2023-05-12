@@ -1,0 +1,40 @@
+Most of the linux distributions have a text editor named vi/vim which is integrated to terminal.
+vim is a updated version of vi.
+
+why to use vi?
+==============
+-> Simple to read contents of a file
+-> Easy to edit contents of a file
+-> We can create, read, edit any kind of file
+-> In servers, we don't have gui, in those cases having an editor like vim would be best to edit text files
+
+VIM
+===
+-> sudo apt install vim
+-> vim testing.txt
+There are two modes in vim
+1) Command mode 
+-> This is the default mode
+-> We can't edit the text in this mode
+-> Whatever we type is interpreted as  a command
+-> Navigate, search, undo, delete etc
+2) Insert mode
+-> Allows us to enter text
+
+Switch to insert mode - press character "I" on keyboard
+Switch to command mode - press "esc" character on keyboard 
+:wq - write and quit
+:q! - quit without saving changes
+
+dd       - to delete a line 
+d10d     - to delete 10 lines
+u        - undo
+A        - shift to end of line and switch to insert mode
+$        - shift to end of line without switching to insert mode
+0        - jump to beginning of line
+10G      - jump to 10th line
+/pattern - search for pattern
+   n - to jump to next match
+   N - jump to previous match
+:%s/oldstring/newstring - replace oldstring with newstring throughout the file
+

@@ -1,0 +1,99 @@
+In windows we can install a software by directly downloading it. That will be stored in program files. We can just delete program file of that particular software if we want to uninstall it.
+But in Linux, downloading and installing a software isn't suggestiable.
+
+Software Package
+================
+=> Software package is a compresses archive, which has all the dependencies the software needs in order to execute.
+=> But it also has dependencies in order to run.
+=> We need to install all those dependencies as well in order to run a particular software.
+=> As we know all the installed software will be spread across multiple folders like bin, sbin, lib and all, we can't go and delete software from all those different directories if we want to uninstall a software.
+=> Updation is also difficult.
+=> For making this process of downloading, installing, configuring, upgrading and uninstalling a software easier we use package manager in linux.
+
+How to install package manager?
+===============================
+=> It is present by default in linux which is apt - Advanced Package Tool.
+=> It downloads and installs a software along with all its dependencies.
+=> It stores all those software files into respective folders like bin, sbin, lib, etc.
+=> It upgrades the software.
+=> It removes all the files that are spread across multiple folders if we uninstall the software.
+
+apt search java
+sudo apt install software_name
+sudo apt remove software_name
+
+What is apt-get?
+================
+=> It is also available in linux by default.
+=> It is also used to install, update and uninstall softwares.
+
+What is the difference between apt and apt-get?
+===============================================
+=> pat is more user friendly than apt-get.
+=> Using apt, we get progress bar while installing applications. But apt-get won't give any progress bar.
+=> apt-get doesn't have search command.
+=> apt is more organized than apt-get.
+
+Before installing anything we should run this command => sudo apt update
+
+From where apt finds and installs all those software packages and its dependencies?
+===================================================================================
+=> Repositories.
+=> All the software packages are hosted in online repositores.
+=> apt searches for the required software packages and its dependencies in the links that are listed in /etc/apt/sources.list and downloads and installs from there.
+
+Exceptions
+==========
+=> What if the software package isn't present in the official repositories that apt uses?
+=> What if we need recent version of that software.
+=> Softwares like code editors and all won't be included in official repos. Everytime a new version is developed, ubuntu devs take time to verify and include them in official repositories.
+ 
+What to do in those situations?
+===============================
+1) Ubuntu software.
+2) Snap Package Manager 
+   => We can download and install software from this software present by default in ubuntu.
+   => A snap is a bundle of an app and its dependencies.
+   => It is installed as one unified application.
+   => It will available to all os that use linux kernel.
+3) Add repository to APT sources
+   => When installing relatively new applications which are not in official repostories yet.
+   => Repository will be added to /etc/apt/sources.list
+   => The next apt install <package_name> command will also look into this newly added repository.
+
+PPA
+===
+=> Personal Package Archive
+=> PPAs are provided by the community
+=> Anybody can create this PPA - private repository to distribute the software
+=> Usually used by developers to provide updates more quickly than in the official ubuntu repositories
+=> Be aware of possible risks before adding a PPA:
+   - no guarantee of quality or security
+   - like any other unofficial software package it can cause difficulties
+     e.g: when upgrading to a new ubuntu release.
+  
+apt vs snap
+===========
+1) Dependencies are shared | Self-contained - dependencies contained in the package.
+2) Only for specific linux distributions (package type .deb) | Supports universal linux packages (package type .snap)
+3) Manual update | Automatic update
+4) Smaller installation size | Larger installation size
+5) Dependency is shared accross applications | Shared dependency is downloaded for each application 
+
+Ubuntu is one of the linux distribution. Along with ubuntu there are hundreds of other linux distributions.
+=> Linux distributions are grouped into categories based on same source code.
+=> Distributions in same category use same package manager.
+
+1) Debian based linux distributions - use apt, apt-get
+Ex: Ubuntu, Devian, Mint
+2) Red Had based linux distributions - use yum
+Ex: RHEL, CentOS, Fedora
+
+apt vs yum
+==========
+Similarities
+=> Package manager uses official repositories
+=> Downloads packages, resolves dependencies etc
+Difference of Repos
+=> More or newer versions of packages
+

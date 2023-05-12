@@ -1,0 +1,23 @@
+pwd           - print working directory
+ls            - list contents of a folder
+ls -R         - Print contents of a folder recursively
+cd            - change directory
+cd ..         - Move to parent directory
+cd -          - Move to previous directory
+mkdir         - Make directory
+rmdir         - Remove empty directory
+touch         - Create a file 
+rm            - Remove a file 
+rm -r         - Remove contents of a directory recursively
+cat           - Concatenate file (or) Display contents of a file
+cp            - Copy contents of a file
+cp -r         - Copy contents of a folder recursively
+mv            - Move (or) Rename file
+uname -a      - Get os related information
+lscpu         - Get cpu related information
+lsmem         - Get memory related information
+sudo          - super user do
+(It allows regular users to run programs with the security privileges of the super user or root)
+sudo adduser admin   - to create a new user
+sudo addgroup devops - to create a new group
+su - admin           - to login as an admin user
