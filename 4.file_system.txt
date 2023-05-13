@@ -1,0 +1,169 @@
+Linux has a hierarchical file system. It is having a single root directory. All other folders will be tree like structure from root folder.
+
+In linux, everything is a file. Images, audios, videos, configurations, devices etc are all files.
+
+/ - represents root directory
+~ - represents home directory of current user
+
+/home - Contains home directories of all users of that system.
+/bin - Binaries. Contains executable binary format files that will be executed whenever we type in some corresponding command.
+/sbin - System Binaries. Contains executable binary format files that will be executed whenever we type in some command. We need sudo permission to execute them.
+/etc - Etcetera. Consists of all the system configuration files and other installed 3rd party software configurations.
+/lib - Libraries. Contains libraries which commands present in /bin and /sbin depend on or use.
+/media - Shows external devices that are connected to system.
+/mnt - Manually mounted external devices are shown here.
+/opt - Installed third party libraries will be present here.
+/root - Home directory of super user.
+/usr - Before /home was introduced, this folder is used to be the home directory of users.
+/boot - Booting. Contains all files needed to boot the system. 
+/tmp - All the temporary files that are created by cpu while performing tasks will be stored here.
+/dev - All the hardware devices are stored here as files.
+/var - Variables. Contains caches and logs.
+
+Note
+====
+1) bin, sbin, lib directories are present in /, /usr, /usr/local. Why?
+=> /bin, /sbin are similar to /usr/bin, /usr/sbin. In older days, we used to face some storage issues, so we started storing those binaries and system binaries in two places. But now we have sufficient storage, so same commands will be present in two places. Moreover, /usr/bin and /usr/sbin have more commands than /bin and /sbin.
+=> /usr/local/bin and /usr/local/sbin consists of third party softwares that are installed by user and are available to system wide users.
+
+2) What is the difference between third party libraries stored in /opt and /usr/local?
+=> Softwares that are splitted into binaries, system binaries and libraries will be stored in /usr/local.
+=> Softwares that are stored as a single file and wont't be splitted will be stored in /opt.
+
+
+Previous notes
+==============
+Windows
+=======
+-> Multiple root folders.
+-> Removable disks ( A: and B: )
+-> Local disk ( C: ) => Internal hard drive
+-> Data ( D: )
+
+-> Hierarchical Tree Structure.
+-> 1 root folder.
+-> Multiple users on computer
+-> Each user has their own space
+-> Each user can have their own configurations
+-> Programs installed system wide, are available for all users on that computer.
+
+/home
+=====
+-> contains home directories of all non-root users.
+
+/root
+====
+-> Root users home directory
+
+/bin
+===
+-> Stands for binaries.
+-> Executables for most essential user commands.
+What is a binary?
+-> Computer readable format (0s and 1s).
+
+/sbin
+====
+-> System binaries
+-> Essential system binaries programs that system admin would use (need superuser privilege).
+
+/lib
+===
+-> Library
+-> Essential shared libraries that executables from /bin and /sbin use.
+
+/usr
+===
+-> User
+-> This was used for user home directories.
+-> We have /bin, /sbin, /lib etc here as well. Why?
+-> Historic reasons.
+-> Because of storage limitations it was split to root binary folders and user binary folders.
+-> But now, we are not splitting them, we just duplicated them. The concept remains same but inside root directory and usr directory we just duplicated them instead of splitting binaries across. Those two were similar. System wide commands are located in them.
+
+/usr/local
+========
+-> /bin, /sbin, /library
+-> Programs that we as user install on computer will be stored here.
+-> 3rd party apps like minikube, docker, node etc
+-> Programs installed here will be available for all the users on the computer.
+-> If we want to restrict access to those programs we can just install on /home directory.
+
+/opt
+===
+-> Optional
+-> Third party programs we install 
+-> System wide - available for all users
+
+/usr/local vs /opt
+===============
+-> /usr/local => Programs, which split its components into binaries, system binaries, libraries etc will be stored here.
+-> /opt => Programs, which do not split its components will be stored here.
+
+/boot
+=====
+-> booting 
+-> Contains files required for booting.
+
+The above are all read only folders.
+
+/etc
+====
+-> et cetera
+-> place where configuration for system wide apps will be stored.
+-> Originally for etc (used to store things that aren't stored anywhere else)
+-> Later on emerged to main configuration location.
+
+/dev
+====
+-> devices
+-> location of device files like webcam, hard drive etc.
+-> Apps and Drivers access this not the user.
+-> Files that the system needs to interact with the device.
+
+/var
+====
+-> Variable
+-> Contains files to which the system writes data during the course of its operation.
+-> /var/log => contains log files
+-> /var/cache => contains cached data from application programs
+
+/tmp
+====
+-> temporary
+-> temporary resources required for some processes, kept here temporarily.
+
+/media
+======
+-> Removable media
+-> Contains subdirectories, where removable media devices inserted into the computer are mounted.
+> Ex: When we insert a CD, a directory will automatically be created and we can access the contents of the CD inside the directory.
+
+/mnt
+====
+-> temporary mount points
+-> historically, sys admins mounted temporary file systems there
+-> for manual mounting
+
+Interaction with these root folders
+============================
+-> Usually, we are not interacting with these folders.
+-> When we install apps using package manager or when we interact with OS, package manager or OS will update those folders.
+
+Hidden files
+==========
+-> Is primarily used to help prevent important data from being accidentally deleted.
+-> Automatically generated by programs or OS.
+-> File name starts with a dot.
+-> In UNIX also called "dotfiles"
+
+On our personal computers => We have both GUI and CLI.
+On servers => We only have CLI.
+
+When we open terminal which is a CLI, We can see following
+ krupa@krupa-QEMU-Virtual-Machine:~$
+-> "krupa" - user name 
+-> "krupa-QEMU-Virtual-Machine" - computer name
+-> ~ - home directory
+-> $ - represents regular user
+-> # - sign for root user

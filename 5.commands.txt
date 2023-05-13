@@ -1,0 +1,120 @@
+pwd           - print working directory
+ls            - list contents of a folder
+ls -R         - Print contents of a folder recursively
+cd            - change directory
+cd ..         - Move to parent directory
+cd -          - Move to previous directory
+mkdir         - Make directory
+rmdir         - Remove empty directory
+touch         - Create a file 
+rm            - Remove a file 
+rm -r         - Remove contents of a directory recursively
+cat           - Concatenate file (or) Display contents of a file
+cp            - Copy contents of a file
+cp -r         - Copy contents of a folder recursively
+mv            - Move (or) Rename file
+uname -a      - Get os related information
+lscpu         - Get cpu related information
+lsmem         - Get memory related information
+sudo          - super user do
+(It allows regular users to run programs with the security privileges of the super user or root)
+sudo adduser admin   - to create a new user
+sudo addgroup devops - to create a new group
+su - admin           - to login as an admin user
+
+Previous notes
+==============
+~ => Home directory
+/ => Root directory
+
+Print working directory
+> pwd
+
+list folders and files
+> ls
+Displays files in that specified path.
+> ls <path>
+Lists directories recursively
+-> ls -r <path>
+List all files including hidden files
+> ls -a <path> 
+
+change directory
+> cd <path>
+2 dots -> represents previous directory
+1 dot -> represents present directory
+
+make directory
+mkdir <directoryName>
+remove empty directory
+rmdir <directoryName>
+
+File operations
+============
+To create a file
+> touch <fileName>
+To remove a file
+> rm <fileName>
+To remove an empty directory
+rm -d <directoryName> || rmdir <directoryName>
+To remove an non-empty directory and all files in it
+> rm -r <directoryName>
+
+clear 
+-> clears the terminal
+
+Note
+====
+Everything in linux is a file
+-> Text documents, pictures etc
+-> Directories
+-> Commands like pwd, ls etc (binaries)
+-> Devices like mouse, printer, keyboard etc 
+We can work with all of them just as we work with files.
+
+Navigating in the file system (cd)
+===========================
+absolute path: complete path of a location
+relative path: path of a location from current location
+
+More file and directory operations
+============================
+Renaming a file or dir
+> mv <fileOrDirName> <newFileOrDirName>
+moving files
+> mv <fileOrDirName> <dirName>
+Copying files or directories
+> cp <fileName> <newFileName>
+> cp -r <dirName> <newDirName>  copy contents recursively (-r)
+
+> history 
+gives list of all past commands we typed in current terminal session
+
+Search on CLI 
+> ctrl + r -> search history
+Stop current command
+> ctrl + c
+copy text
+> ctrl + shift + c
+Paste copied text to terminal 
+> ctrl + shift + v
+
+Display contents of a file (cat means concatenate)
+> cat <fileName>
+
+Display OS info
+============
+Show system and kernel
+> uname -a 
+About cpu 
+> lscpu
+About memory
+> lsmem
+
+Execute commands as super user
+============================
+sudo => allows regular users to run programs with the security privileges of the superuser or root.
+> sudo adduser admin
+> sudo addgroup devops
+> su - admin   =>  to switch to different user
+

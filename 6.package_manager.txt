@@ -97,3 +97,78 @@ Similarities
 Difference of Repos
 => More or newer versions of packages
 
+
+Previous notes
+==============
+Package manager helps us in installing software applications.
+
+What is a software package?
+-> A compressed archive, containing all required files by a software to run.
+-> Apps usually have dependencies.
+
+Ex: Dependencies firefox needs, are not packaged into the archive. These dependencies also need to be installed.
+
+In linux, installed app is splitted and spread across different folders.
+Managing apps, like uninstalling everything completely is more difficult.
+
+Package Manager
+===============
+-> downloads, installs or updates existing software from a repository.
+-> ensures the integrity and authenticity of the package.
+-> manages and resolves all required dependencies.
+-> knows where to put all the files in the linux file system.
+-> easy upgrading of the software.
+-> 1 central place to install, upgrade, configure, remove software.
+
+How to get package manager
+========================
+-> Package manager is already included in every linux distribution.
+-> In ubuntu, we have APT (Advanced Package Tool) package manager available.
+
+Manage software with APT
+======================
+> apt 
+> apt search <packageName>
+> sudo apt install <packageName>
+> sudo apt remove <packageName>
+
+Where are these files stored?
+
+Repositories
+==========
+-> Storage location, containing thousands of programs.
+-> Package manager fetches software packages from these repos.
+
+updating package index
+===================
+Before we install any software package, we need to update APT
+> sudo apt update
+-> pulls the latest changes from the APT repos.
+-> The apt package index is basically a database.
+-> Holding records of available packages from repositories.
+-> The official repositories that APT uses to find and install software packages are stored in /etc/apt/sources-list.
+
+Why alternative ways to install software:
+-> There are packages, that are not available in these official repositories.
+-> Package is there, but not the latest version.
+          Software packages are verified, before adding to repository.
+          Verification process takes time.
+-> Browsers, code editors etc are not available.
+
+What are different alternative ways? 
+1) Ubuntu software center
+2) Snap package manager
+-> Initial release in 2014.
+-> Many still use the term 'snappy', which it was called before.
+-> Snap is software packaging and deployment system.
+-> For OS using the Linux kernel.
+-> Snap is a bundle of an app along with its dependencies.
+> Snap store: Provides a place to upload snaps, and for users to browse and install software.
+3) Add repository to official list of repos.
+
+Snap vs Apt
+==========
+-> Snap => Self contained dependencies contained in the package.
+-> APT => Dependencies are shared.
+
+

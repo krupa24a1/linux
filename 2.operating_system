@@ -1,0 +1,127 @@
+Hardware of Computer: CPU, Memory, Storage, I/O devices (keyboard, mouse, screen)
+
+How to interact with hardware?
+-> Apps don't know how to interact with hardware.
+-> Apps, like browser can't be installed directly on hardware.
+-> If these apps want to talk, then they must contain code to interact with each and every hardware which isn't efficient and difficult.
+Solution: Operating System
+-> Operating system acts as middleware between applications and hardware.
+-> Translator between application running on our machine and hardware that our computer made up of.
+-> It also manages resources among applications.
+-> Isolates contents of applications.
+
+Tasks of Operating System
+======================
+1) Process Management
+-> Managing CPU resources.
+-> Process: Small unit that executes on a Computer
+    Ex: Mouse click, Opening browser, opening terminal etc
+-> Each process has its isolated space which helps them not to interfere with other processes.
+-> 1 Cpu can process 1 process at a time.
+-> CPUs switch between processes so fast so that we have an illusion that they are executed parallely.
+-> Dual Core: 2 CPUs, Quad Core: 4 CPUs
+2) Memory Management
+-> Allocating working memory (RAM(Random Access Memory))
+-> Every app needs some data to work.
+-> Memory is limited on computer.
+When memory is full 
+-> Memory swapping (OS swaps memory between apps)
+Memory Swapping
+===============
+-> Takes out information of P1 that is stored in RAM and pushes it into ROM.
+-> Allocates that free memory to P2.
+3) Storage Management
+-> Also called secondary memory.
+-> RAM -> for active processes (working memory), ROM -> Persist data for long-time.
+-> Hard disk or SSD Stores files, videos, images, games, browser configurations etc.
+Manages file system
+-> Stored in a structured way.
+-> In unix: tree file system.
+-> in windows: multiple root folders.
+4) Management of I/O devices
+-> Mouse, Keyboard, Screen and external devices like printers, hard drive etc
+-> Os acts as a translator between these devices and applications.
+5) Security and Networking
+-> Security: Managing Users and Permissions, Each user has his own space.
+-> Networking: Assigning ip addresses and ports.
+
+Operating System Components
+=========================
+1) Kernel
+-> When we turn on our computer, kernel loads first.
+-> It is the heart of OS.
+-> It manages CPU, RAM and Memory.
+-> Different operating systems may have different kernels.
+-> Gives access to external i/o devices such as printers, usb cables through device drivers.
+-> Establishes interaction between apps and hardware by allocating cpu, memory and cleaning up memory etc.
+-> Kernel is a program consists of drivers, dispatchers, scheduler, file system etc.
+2) Application Layer
+-> Ex: Linux kernel
+-> Different linux distributions like mint, centos, debian, ubuntu etc have different application layers but based on same linux kernel.
+-> They have different color theme, icons, GUI,  different apps packaged inside distributions like application managers, programming languages, CLIs etc
+-> Android (for mobile phones - it has different hardware) is based on linux kernel.
+-> mac OS (Desktops, laptops), ios (mobile phones) are based on Darwin (XNU) kernel
+
+Operating System for Servers
+========================
+-> Mostly based on linux.
+-> More light weight and performant.
+-> No GUI or other user apps.
+
+How to Interact with kernel
+======================
+1) GUI
+2) CLI
+
+Android Architecture 
+=================
+User Apps
+Android
+Linux Kernel
+Hardware 
+
+3 Main Os for Computers: Linux, Mac, Windows
+-> Each OS has various versions.
+-> Kernel stays the same, but application layer is developed.
+
+Client OS vs Server OS
+===================
+-> Linux and Windows have server distributions.
+-> Client OS has GUI and I/o devices.
+-> Server OS doesn't have GUI and i/o devices. (We need to interact only with CLI).
+
+MacOs was originally called OS X. (Same os with different name)
+
+UNIX
+====
+-> Unix - 1970
+-> Codebase for many different os.
+-> Developed independent of linux.
+-> Many OS are built on top of Unix.
+-> MacOs kernel Darwin is based on Unix.
+-> To keep them compatible, standards were introduced.
+-> POSIX (Portable Operating System Interface) is the most popular standard.
+
+LINUX
+=====
+-> Linux - 1991
+-> It was developed in parallel to Unix based OS.
+-> Created by Linus Torvalds.
+-> No source code of unix. (not dependent on unix)
+-> Linux was not a version of unix, but a clone of it and also called Unix Like.
+-> Linux and MacOs both are POSIX compliant.
+-> That's why they have similarities.
+-> Mostly used Os for servers.
+-> Ubuntu is one of Linux distribution.
+
+Mine
+====
+OS: MacOs 13 (Ventura)
+Architecture: ARM64
+Processor: Apple SIlicon
+RAM: 8gb
+ROM: 245.11 gb
+Processors: Octa core (8)
+
+Older - Intel processor
+New - Apple Silicon Processor

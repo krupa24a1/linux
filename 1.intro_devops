@@ -1,0 +1,33 @@
+1) Programming
+-> Programmed by developers.
+2) Software Testing
+-> Developers test
+-> Dedicated testers will be there
+-> Automated testing (code will be testing code)
+3) Release of Software
+-> Operations team runs the software in production
+
+Developers responsibilities
+======================
+-> Writing code 
+-> Testing it through manual testing or automated scripts
+-> Resolve bugs
+-> Tools: Programming languages, test frameworks, databases, version control
+
+Operations team responsibilities
+==========================
+-> Zero downtime
+-> Handle huge traffic
+-> Recovery or backup
+-> Tools: OS (mostly linux), CLI, Scripting, Monitoring tools
+
+Developers write code, testers test it and now it's IT operations team role to deploy it on a server. The application might be having some environmental variables, dependencies, server configuration or some db configuration. The documentation provided by developers may not be clear enough, can have missing parts for the operations team to deploy app successfully. Miscommunication and misunderstandings might take place. This traditional way isn't a good approach as it takes too long for release.
+
+Solution: DevOps culture.
+-> Just a way of working between Developers and Operations.
+-> Common language to communicate.
+-> DevOps engineer: Intermediary person between developers and operations.
+
+The Agile methodology supports DevOps
+
+Core of DevOps is CI (Continuous Integration)/CD (Continuous Delivery or Deployment)

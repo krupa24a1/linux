@@ -1,0 +1,56 @@
+Hardware -> Windows OS -> Applications
+
+What if we want to use linux os?
+-> We need another laptop to install linux os on it.
+
+What is Virtualization?
+-> No need of separate hardware to install another os.
+-> We can install linux os on top of windows and vice versa.
+-> We can install any os on top of any os using hypervisor.
+
+What is Hypervisor?
+-> Hypervisor is a technology that allows creation and management of various virtual machines on top of hosts physical machine (with os or without os).
+-> Virtualbox takes hardware resources from Host OS.
+-> Creates virtual cpu, virtual RAM, virtual storage for each virtual machine.
+-> We can only give available resources. (hardware).
+-> These VMs are isolated.
+-> Even if something happens to VM, it won't effect host.
+
+Type-2 Hypervisor
+==============
+Hardware -> Host OS -> Hypervisor (Ex: virtual box) -> Guest OS.
+-> Guest OS will borrow hardware resources from Host OS.
+-> Mostly used for personal computers.
+-> Ex: Oracle virtual box (most popular because it's open source and works on all os).
+
+Type-1 Hypervisor (Bare Metal Hypervisors)
+===================================
+-> Hypervisor is installed directly on Hardware instead of Host OS.
+-> It controls all hardware resources.
+-> Mostly used for servers.
+-> Ex: vmware ESXI, Microsoft Hyper-v etc.
+-> Efficient usage of hardware resources. (Hardware resources are used to the full for creating virtual machines)
+
+Why companies adopting virtualization?
+-> Abstraction of OS from hardware.
+
+Without virtualization
+=================
+-> Company managed their own servers. 
+-> Install OS.
+-> Install APPs.
+-> OS is tightly coupled to hardware.
+-> If some hardware component fails, if it's not repairable anymore, then all the OS and apps that we installed and all the data are gone.
+-> One point of failure.
+
+With virtualization
+===============
+-> OS is a portable file.
+-> These files are virtual machine images.
+-> Includes OS and all apps on it.
+-> We can have backups of entire OS (snapshots).
+
+-> secure
+-> portable
+-> not dependent on physical server.
+
