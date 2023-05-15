@@ -34,14 +34,14 @@ Memory Swapping
 -> Also called secondary memory.
 -> RAM -> for active processes (working memory), ROM -> Persist data for long-time.
 -> Hard disk or SSD Stores files, videos, images, games, browser configurations etc.
-Manages file system
+4) Manages file system
 -> Stored in a structured way.
 -> In unix: tree file system.
 -> in windows: multiple root folders.
-4) Management of I/O devices
+5) Management of I/O devices
 -> Mouse, Keyboard, Screen and external devices like printers, hard drive etc
 -> Os acts as a translator between these devices and applications.
-5) Security and Networking
+6) Security and Networking
 -> Security: Managing Users and Permissions, Each user has his own space.
 -> Networking: Assigning ip addresses and ports.
 
@@ -55,10 +55,10 @@ Operating System Components
 -> Gives access to external i/o devices such as printers, usb cables through device drivers.
 -> Establishes interaction between apps and hardware by allocating cpu, memory and cleaning up memory etc.
 -> Kernel is a program consists of drivers, dispatchers, scheduler, file system etc.
-2) Application Layer
 -> Ex: Linux kernel
+2) Application Layer
 -> Different linux distributions like mint, centos, debian, ubuntu etc have different application layers but based on same linux kernel.
--> They have different color theme, icons, GUI,  different apps packaged inside distributions like application managers, programming languages, CLIs etc
+-> They have different color theme, icons, GUI, different apps packaged inside distributions like application managers, programming languages, CLIs etc
 -> Android (for mobile phones - it has different hardware) is based on linux kernel.
 -> mac OS (Desktops, laptops), ios (mobile phones) are based on Darwin (XNU) kernel
 
@@ -75,10 +75,7 @@ How to Interact with kernel
 
 Android Architecture 
 =================
-User Apps
-Android
-Linux Kernel
-Hardware 
+Hardware -> Linux Kernel -> Android -> User Apps
 
 3 Main Os for Computers: Linux, Mac, Windows
 -> Each OS has various versions.

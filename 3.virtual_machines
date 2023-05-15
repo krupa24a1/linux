@@ -24,7 +24,8 @@ Hardware -> Host OS -> Hypervisor (Ex: virtual box) -> Guest OS.
 -> Ex: Oracle virtual box (most popular because it's open source and works on all os).
 
 Type-1 Hypervisor (Bare Metal Hypervisors)
-===================================
+==========================================
+Hardware -> Hypervisor -> vms
 -> Hypervisor is installed directly on Hardware instead of Host OS.
 -> It controls all hardware resources.
 -> Mostly used for servers.

@@ -1,0 +1,125 @@
+There are 3 types of users or accounts in a system
+1) Super user account
+=> Only on account per system.
+=> Also called root user.
+=> Has all privileges and access.
+2) User account
+=> Standard or regular user.
+=> We create this type of account in order to login to system and perform tasks.
+=> Each system can have multiple regular user accounts.
+=> We can run commands as super user by prefixing command with word sudo.
+3) Service account
+=> Linux distributions have various servers.
+=> Each server is running a service.
+=> The service should not run with root user as it may cause some security issues because root user is having all privileges.
+=> E.g: To run postgresql service, a postgres service account is created.
+
+Why multiple user accounts?
+=> In windows we have a centralized user management system which manages all users.
+=> Those users can login to any hardware if that system is connected to that central system.
+=> In linux, we don't have that central system.
+=> We can only have multiple user accounts dedicated to that particular hardware.
+
+Users and Permissions
+=====================
+Permissions can be assigned at 
+1) User level
+2) Group level
+=> Assigning permissions to each and every user can be tidious.
+=> We can create groupes, assign permissions to it and then add users to that group.
+=> If we want to revoke permissions from user, we can simply remove user from that group.
+E.g: Groups like devops, admin, developers. Add users to each group. Assign permissions to group.
+
+Where all these permisisons are stored?
+=======================================
+1) /etc/passwd
+=> Stored user account information.
+=> Every user can read but only super user can edit the file.
+krupa:x:1000:1000:krupa,,,:/home/krupa:/bin/bash
+=> krupa - username with which the user logs in.
+=> x - x means the password is encrypted and it is Stored in /etc/shadow.
+=> 1000 - Each user has a unique ID. UID 0 is reserved for root.
+=> 1000 - Primary Group ID of that user. It is stored in /etc/group.
+=> krupa,,, - User ID info. Comment field for extra information about users.
+=> /home/krupa - home directory of that user.
+=> /bin/bash - default shell of that user.
+
+How to add user?
+================
+sudo adduser <username>
+=> Automatically chooses policy-conformant UID and GID values.
+=> Automatically creates a home directory with skeletal configuration.
+=> It creates a user with the given name and assigns UID.
+=> Also creates a group with the same name as username and assigns GID.
+
+How to change password?
+=======================
+passwd <username>
+
+How to login with other user account?
+=====================================
+su - <username> => to login as other regular user.
+su - => to login as root user.
+=> su means substitute or switch user.
+
+How to add new group
+====================
+sudo groupadd devops
+=> By default, system assigns next available GID from the range of Group IDs specified in the login.defs file.
+=> All groupes info is found in /etc/group.
+devops:x:1002:
+=> devops: group name
+=> x: means, the password is encrypted and stored in /etc/shadow
+=> 1002: GID of that group
+=> last fields consists of the list of users that are part of that group.
+
+Different user and group commands
+=================================
+=> adduser, useradd
+=> addgroup, groupadd
+adduser and addgroup
+====================
+=> Interactive.
+=> More user friendly.
+=> It chooses conformant UID, GUID values for you.
+=> Creates a home directory with skeletal config automatically.
+=> Or asks for input in interactive mode.
+useradd and groupadd
+====================
+=> We need to provide information ourself.
+=> Low-level utilities.
+
+Which one to use?
+=================
+=> Use useradd, groupadd - when executing in an automated way i.e., scripts.
+=> Use adduser, addgroup - when executing them manually.
+=> Sample applies for deluser, delgroup and userdel, groupdel.
+
+How to change primary group of an user?
+=======================================
+=> sudo usermod [options] <username> : modify a user account
+sudo usermod -g <groupname> <username>
+e.g: sudo usermod -g devops krupa
+=> A user can be a part of one primary group and multiple secondary groupes.
+=> -G flag is used to add user to multiple secondary groups.
+=> -G overrides existing secondary groups list.
+=> -aG appends new secondary group to existing secondary groups list.
+e.g: sudo usermod -G admin krupa
+e.g: sudo usermod -aG developer krupa
+
+Print groups that a user part of
+================================
+groups => gives list of secondary groups that currently logged in user is part of.
+groups demo => gives list of secondary groups that specified user is part of.
+
+Add user to group at the time of user creation
+==============================================
+sudo useradd -G devops krupa
+=> The low level command compared to adduser
+=> -G is used to add user to multiple secondary groups.
+=> -d is used to add custom home directory.
+=> Other options for shell etc
+
+Remove user from a group
+========================
+sudo gpasswd -d krupa devops
