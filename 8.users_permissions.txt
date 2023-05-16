@@ -123,3 +123,91 @@ sudo useradd -G devops krupa
 Remove user from a group
 ========================
 sudo gpasswd -d krupa devops
+
+Permissions
+===========
+Each directory and file has permissions for user, group and others.
+
+ls -l : Displays long list which shows permissions
+ls -la : includes hidden files and folders as well
+
+There are 3 types of permissions.
+1) Read
+2) Write
+3) Execute
+
+e.g: -rw-rw-r-- 1 krupa developer  1527 May 14 15:34 1.intro_devops
+     drwxrwxr-x 8 krupa developer  4096 May 15 21:19 .git
+
+-/d : - means its is a file and d means it is a directory
+
+rw-/rwx : first set of permissions indicate the permissions the owner of that file having on that file. Here in this case the owner of the file 1.intro_devops and .git folder is krupa. She is having read, write permissions on that file and all 3 permissions on that folder.
+
+rw-/rws : second set of permissions indicate the permissions the primary group of the owner of that file or folder.
+
+r--/r-x : third set of permission indicate the permissions of the users that are not part of owner of that file and primary group of the owner of that file.
+
+- : when it is present in place of read, write or execute permission, that means that particular permission is absent for that user or group or others.
+
+r : read permission
+
+w : write permission
+
+x : execute permission
+  
+
+How to change owner or owner's primary group of a file or folder?
+=================================================================
+e.g: -rw-rw-r-- 1 krupa developer  5018 May 15 21:19 8.users_permissions.txt
+
+sudo chown krupamani:devops 8.users_permissions.txt
+	- changes both owner and owner group of that file
+sudo chown krupamani 8.users_permissions.txt
+	- changes only the owner of that file
+sudo chgrp devops 8.users_permissions.txt
+	- changes only the owner group of that file
+
+How to change permissions of a file or folder?
+==============================================
+1) Symbolic mode
+	- r read
+	- w write 
+	- x execute
+	- - no permission
+	- + add
+	- - remove
+2) Set permissions: set the permission and override the permissions set earlier.
+3) Numeric mode 
+	- 4 read
+	- 2 write
+	- 1 execute
+	- 0 no permission
+
+1) Symbolic mode 
+e.g: -rw-rw-r-- 1 krupa developer  5018 May 15 21:19 8.users_permissions.txt
+sudo chmod u+x 8.users_permissions.txt - add execute permission to user
+sudo chmod u-r 8.users_permissions.txt - remove read permission from user
+sudo chmod g-w 8.users_permissions.txt - remove write permission to group
+sudo chmod o+x 8.users_permissions.txt - add execute permission to others
+sudo chmod o+a 8.users_permissions.txt - add all permissions to others
+sudo chmod g-a 8.users_permissions.txt - remove all permissions from group
+
+2) Set permissions
+e.g: -rw-rw-r-- 1 krupa developer  5018 May 15 21:19 8.users_permissions.txt
+sudo chmod u=-wx 8.users_permissions.txt - write, execute permissions to user
+sudo chmod g=r-- 8.users_permissions.txt - read permission for group
+sudo chmod o=r-x 8.users_permissions.txt - read, execute permissions to others
+
+3) Numeric mode
+0 - no permissions
+1 - execute
+2 - write
+3 - write, execute
+4 - read
+5 - read, execute
+6 - read, write
+7 - read, write execute
+
+sudo chmod 777 8.users_permissions.txt - add all permissions to all users
+sudo chmod 000 8.users_permissions.txt - remove all permissions from all users
+sudo chmod 753 8.users_permissions.txt - all permissions to owner, read-execute permissions to group, write-execute permission to others.
