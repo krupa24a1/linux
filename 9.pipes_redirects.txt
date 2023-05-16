@@ -1,0 +1,39 @@
+Pipes (|):
+==========
+Passing stadard output of one command as a standard input of another command.
+
+There are 3 standard i/o streams
+================================
+1) Standard Input (0)
+2) Standard Output (1)
+3) Standard Error (2)
+There is one stadard input stream and two standard output streams(standard output and standard error).
+
+pipe usecases?
+==============
+1) less - When we want to display large contents in an interactive mode by not filling up the terminal then less command is used.
+=> space - to go to next page
+=> b - to go to previous page
+=> q - to quit from interactive mode
+cat /var/log/syslog | less
+ls /sbin | less
+history | less
+2) grep
+=> globally search for a regular expression
+=> It searches for a given pattern or sequence of characters in the input we give and returns all the lines that match the pattern.
+ls /sbin | grep adduser
+history | grep "sudo chmod"
+
+=> We can redirect grep commands standard output as input to less command if it is too large.
+history | grep rm | less
+
+Redirects (>, >>, 2>)
+=====================
+=> If we want to store standard output of a command into a file, we use redirect(>).
+history | grep grep > grep_commands.txt
+=> If we want to append standard output of a command to a file with content, we use redirect (>>).
+history | grep less >> grep_commands.txt
+=> If we want to store standard error into a file, we use 2>. 2 is the code that represents standard error.
+madir 2> error.txt
+
+We can take standard input from a file using "<" operator.
