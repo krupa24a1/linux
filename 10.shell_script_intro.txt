@@ -1,0 +1,60 @@
+What is shell script?
+=====================
+=> It is a file that contains a bunch of shell commands that we want to execute.
+=> The file has an extension of .sh
+=> The first line of the file will be shebang line.
+=> E.g: #!/bin/bash
+=> Rest of the file contains the commands that we want to execute.
+=> We can execute file with ./<filename>
+=> E.g: ./sample.txt
+
+Why do we need shell script?
+============================
+Till now we have executed commands one by one on terminal simply by typing one after the other.
+=> What if we want to store the history of those commands?
+=> What if we want to share those commands to others?
+=> What if there are bulk operations?
+=> What if there are logics?
+=> What if we want to execute same set of commands on different servers?
+In all the above cases, typing out each and every command manually on terminal would be tidious.
+So, the solution is 
+=> Simply type in all those commands in a file.
+=> Share this file to others.
+=> Bulk operations can be done using programming constructs.
+=> Logics can also be written inside file.
+=> We can execute same file on multiple servers.
+
+What is a Shell?
+================
+=> Shell is a program that interprets the commands that we write so that kernel can understand and execute them.
+=> Every unix like systems such as linux and macos has default shell called Bourne shell.
+1) Bourne shell /bin/sh
+2) Bash Shell /bin/bash
+	- Bourne Again Shell
+	- Improved version of default Bourne shell.
+3) ZSH Shell /bin/zsh
+etc etc.,
+=> Every shell is a programming language.
+=> We can write logic, commands and do bulk operations with it.
+
+sample.txt
+==========
+#! /bin/bash
+echo "Linux is cool!"
+
+Execute sample.txt
+==================
+1) ./sample.txt
+2) <shell name> sample.txt
+	- e.g: bash sample.txt
+
+Add execution permission
+========================
+sudo chmod u+x sample.txt
+
+Why we need shebang line? 
+=========================
+=> #! /bin/bash
+=> There are various shell programs present in the system.
+=> How the system knows which shell should execute the shell script?
+=> The path to that shell is given in the start of the file which is called shebang line.
